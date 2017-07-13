@@ -31,6 +31,13 @@ $(document).ready(function() {
     order.calculateCost();
     $(".totalCost").append("$" + order.cost + ".00");
     console.log(order.cost);
+    $("ul#pizza").append("<li><span class='pizzaList'>" + order.size + "</span></li>");
+    $(".pizzaList").click(function() {
+      $("#detailedOrder").show();
+      order.toppings.forEach(function(item) {
+        $(".toppings").append("<li>" + item + " - $1.00</li>");
+      });
+    });
     console.log(order);
   });
 });
