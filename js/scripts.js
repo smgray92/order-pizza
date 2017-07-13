@@ -16,10 +16,48 @@ Order.prototype.calculateCost = function() {
   }
 }
 
+function Contact (name, street, [], phone) {
+  this.name = name;
+  this.street = street;
+  this.address = [];
+  this.phone = phone;
+}
+function Address (city, state, zip) {
+  this.city = city;
+  this.state = state;
+  this.zip = zip;
+}
+
+Contact.prototype.deliveryOption = function() {
+  return this.name;
+  return this.street;
+  return this.address;
+  return this.phone;
+}
+Address.prototype.delivery = function() {
+  return this.city + ", " + this.state + " " + this.zip;
+}
+
 $(document).ready(function() {
   var order = new Order();
   $("#orderSubmit").click(function() {
     $("#reviewOrder").show();
+    var addresss = $("input:radio[name=service]:checked").val();
+    var name = $("input#name").val();
+    var street = $("input#street").val();
+    var city = $("input#city").val();
+    var state = $("input#state").val();
+    var zip = $("input#zip").val();
+    var phone = $("input#phone").val();
+
+    var contact = new Contact(name, street, [], phone);
+    var addressName = new Address(city, state, zip,);
+    addressName.delivery();
+
+    contact.deliveryOption();
+    contact.address.push(addressName);
+    console.log(contact);
+
     var inputtedSize = $("#size").val();
     order.size = inputtedSize;
     console.log(inputtedSize);

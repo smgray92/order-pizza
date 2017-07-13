@@ -11,6 +11,44 @@
   <div class="container">
   <h1>Leaning Tower Of Pizza</h1>
   <h3>Welcome to Leaning Tower Of Pizza! Select the size and toppings you would like to have on your pizza.</h3>
+  <h4>Delivery or Pick-up</h4>
+  <div class="radio">
+  <label>
+    <input type="radio" name="service" value="delivery" checked>
+    Delivery
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="service" value="pickup">
+    Pick-Up
+  </label>
+</div>
+<h5>If you selected Delivery, please fill out the contact information below:</h5>
+<div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="street">Street Address:</label>
+            <input id="street" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input id="city" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="state">State:</label>
+            <input id="state" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip Code:</label>
+            <input id="zip" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input id="phone" class="form-control" type="text">
+          </div>
   <h4>Size:</h4>
   <select class="form-control" id="size">
     <option>8-inch Small Thin Crust- $9.00</option>
@@ -32,9 +70,11 @@
   <input type="checkbox" name="toppings" value="tomato">Tomato<br>
   <input type="checkbox" name="toppings" value="mushroom">Mushroom<br>
   <input type="checkbox" name="toppings" value="olive">Olives<br>
+
+
   <button type="click" id="orderSubmit">Submit Order</button>
   <div id="reviewOrder">
-    <h2>Review your Order</h2>
+    <h3>Review your Order</h3>
     <h4>Total Cost: <span class="totalCost"></span></h4>
               <ul id="pizza">
 
@@ -46,6 +86,11 @@
                    <span class="toppings"></span></p>
                  </ul>
 
+  </div>
+  <div id="addressDelivery">
+<p>The following order will be delivered to:</p>
+<ul id="address">
+</ul>
   </div>
 </div>
 </body>
