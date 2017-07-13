@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Order</title>
+</head>
+<body>
+  <div class="container">
+  <h1>Leaning Tower Pizza</h1>
+  <h3>Welcome to Leaning Tower Pizza! Select the size and toppings you would like to have on your pizza.</h3>
+  <h4>Size:</h4>
+  <select class="form-control" id="size">
+    <option>8-inch Small Thin Crust- $9.00</option>
+    <option>8-inch Small Original Crust- $9.00</option>
+    <option>12-inch Medium Thin Crust- $12.00</option>
+    <option>12-inch Medium Original Crust- $12.00</option>
+    <option>16-inch Large Thin Crust- $15.00</option>
+    <option>16-inch Large Original Crust- $15.00</option>
+  </select>
+  <h4>Toppings ($1.00 each):</h4>
+  <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+  <input type="checkbox" name="toppings" value="mozzarella">Mozzarella<br>
+  <input type="checkbox" name="toppings" value="sausage">Italian Sausage<br>
+  <input type="checkbox" name="toppings" value="bacon">Bacon<br>
+  <input type="checkbox" name="toppings" value="chicken">Grilled Chicken<br>
+  <input type="checkbox" name="toppings" value="onion">Onion<br>
+  <input type="checkbox" name="toppings" value="pepper">Green Pepper<br>
+  <input type="checkbox" name="toppings" value="garlic">Garlic<br>
+  <input type="checkbox" name="toppings" value="tomato">Tomato<br>
+  <input type="checkbox" name="toppings" value="mushroom">Mushroom<br>
+  <input type="checkbox" name="toppings" value="olive">Olives<br>
+  <button type="click" id="orderSubmit">Submit Order</button>
+  <div id="reviewOrder">
+    <h2>Review your Order</h2>
+    <p>Total Cost: <span class="totalCost"></span></p>
+              <ul id="pizza">
+
+              </ul>
+            </div>
+      <div id="detailedOrder">
+
+                <h2></h2>
+                <p>First name: <span class="first-name"></span></p>
+                <p>Last name: <span class="last-name"></span></p>
+                <p>Addresses:</p>
+                <ul id="addresses">
+
+                </ul>
+
+  </div>
+</div>
+</body>
+</html>
