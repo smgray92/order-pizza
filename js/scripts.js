@@ -19,7 +19,7 @@ Order.prototype.calculateCost = function() {
 $(document).ready(function() {
   var order = new Order();
   $("#orderSubmit").click(function() {
-    console.log("hello");
+    $("#reviewOrder").show();
     var inputtedSize = $("#size").val();
     order.size = inputtedSize;
     console.log(inputtedSize);
@@ -29,6 +29,7 @@ $(document).ready(function() {
     });
     order.cost += order.toppings.length;
     order.calculateCost();
+    $(".totalCost").append("$" + order.cost + ".00");
     console.log(order.cost);
     console.log(order);
   });
