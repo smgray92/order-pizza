@@ -38,11 +38,44 @@ Address.prototype.delivery = function() {
   return this.city + ", " + this.state + " " + this.zip;
 }
 
+
 $(document).ready(function() {
   var order = new Order();
+  $("#anotherPizza").click(function() {
+    $("#newPizza").append("<div class='newPizza'>" +
+"<h4>Size:</h4>" +
+"<select class='form-control' id='size'>" +
+  "<option>8-inch Small Thin Crust- $9.00</option>" +
+  "<option>8-inch Small Original Crust- $9.00</option>" +
+  "<option>12-inch Medium Thin Crust- $12.00</option>" +
+  "<option>12-inch Medium Original Crust- $12.00</option>" +
+  "<option>16-inch Large Thin Crust- $15.00</option>" +
+  "<option>16-inch Large Original Crust- $15.00</option>" +
+"</select>" +
+"<h4>Toppings ($1.00 each):</h4>" +
+"<input type='checkbox' name='toppings' value='pepperoni'>Pepperoni<br>" +
+"<input type='checkbox' name='toppings' value='mozzarella'>Mozzarella<br>" +
+"<input type='checkbox' name='toppings' value='sausage'>Italian Sausage<br>" +
+"<input type='checkbox' name='toppings' value='bacon'>Bacon<br>" +
+"<input type='checkbox' name='toppings' value='chicken'>Grilled Chicken<br>" +
+"<input type='checkbox' name='toppings' value='onion'>Onion<br>" +
+"<input type='checkbox' name='toppings' value='pepper'>Green Pepper<br>" +
+"<input type='checkbox' name='toppings' value='garlic'>Garlic<br>" +
+"<input type='checkbox' name='toppings' value='tomato'>Tomato<br>" +
+"<input type='checkbox' name='toppings' value='mushroom'>Mushroom<br>" +
+"<input type='checkbox' name='toppings' value='olive'>Olives<br>" +
+"</div>");
+  });
+
   $("#orderSubmit").click(function() {
     $("#reviewOrder").show();
-    var addresss = $("input:radio[name=service]:checked").val();
+
+    // $("input:checkbox[name=toppings]").prop("checked", false);
+    var address = $("input:radio[name=service]:checked").val();
+    if (address === "delivery") {
+      $("#addressDelivery").show();
+    }
+    console.log(address);
     var name = $("input#name").val();
     var street = $("input#street").val();
     var city = $("input#city").val();
@@ -52,13 +85,18 @@ $(document).ready(function() {
 
     var contact = new Contact(name, street, [], phone);
     var addressName = new Address(city, state, zip,);
-    addressName.delivery();
 
+    addressName.delivery();
     contact.deliveryOption();
     contact.address.push(addressName);
     console.log(contact);
+    console.log(addressName);
 
-    var inputtedSize = $("#size").val();
+    $("#address").append(contact);
+
+$(".newPizza").each(function() {
+  $(".totalCost").empty();
+    var inputtedSize = $(this).find("#size").val();
     order.size = inputtedSize;
     console.log(inputtedSize);
     $("input:checkbox[name=toppings]:checked").each(function(){
@@ -71,9 +109,11 @@ $(document).ready(function() {
     console.log(order.cost);
     $("ul#pizza").append("<li><span class='pizzaList'>" + order.size + "</span></li>");
     $(".pizzaList").click(function() {
+      // $(".toppings").empty();
       $("#detailedOrder").show();
       order.toppings.forEach(function(item) {
         $(".toppings").append("<li>" + item + " - $1.00</li>");
+      });
       });
     });
     console.log(order);
