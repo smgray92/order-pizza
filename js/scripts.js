@@ -95,15 +95,20 @@ var order = new Order();
     var phone = $("input#phone").val();
 
     var contact = new Contact(name, street, [], phone);
-    var addressName = new Address(city, state, zip,);
+    var addressName = new Address(city, state, zip);
 
     addressName.delivery();
+    console.log(addressName);
     contact.deliveryOption();
     contact.address.push(addressName);
     console.log(contact);
     console.log(addressName);
 
-    $("#address").append(contact);
+    $(".show-name").text(contact.name);
+    $('.show-street').text(contact.street);
+    $('.show-address').text(addressName.delivery());
+    $('.show-phone').text(contact.phone);
+
 
 $(".newPizza").each(function() {
 
@@ -121,9 +126,10 @@ console.log(order.cost);
     // $(this).click(function() {
       // $(".toppings").empty();
       $(".pizzaList").one( 'click', function() {
+        // $(".pizzaList").forEach(function() {
       $("#detailedOrder").show();
       order.toppings.forEach(function(item) {
-        $(".pizzaList").append("<li>" + item + " - $1.00</li>");
+        $("#toppingsReview").append("<li>" + item + " - $1.00</li>");
         // order.calculateCost();
       });
       });
