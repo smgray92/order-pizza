@@ -7,14 +7,14 @@ function Order () {
 }
 
 Order.prototype.calculateCost = function() {
-  if (this.size === "8-inch Small Thin Crust- $9.00" || this.size === "8-inch Small Original Crust- $9.00") {
-    this.cost += 9;
+  if (this.size === "8-inch Small Thin Crust- $6.00" || this.size === "8-inch Small Original Crust- $6.00") {
+    this.cost += 6;
   }
-  else if (this.size === "12-inch Medium Thin Crust- $12.00" || this.size === "12-inch Medium Original Crust- $12.00") {
-    this.cost += 12;
+  else if (this.size === "12-inch Medium Thin Crust- $8.00" || this.size === "12-inch Medium Original Crust- $8.00") {
+    this.cost += 8;
   }
-  else if (this.size === "16-inch Large Thin Crust- $15.00" || this.size === "16-inch Large Original Crust- $15.00") {
-    this.cost += 15;
+  else if (this.size === "16-inch Large Thin Crust- $10.00" || this.size === "16-inch Large Original Crust- $10.00") {
+    this.cost += 10;
   }
 }
 
@@ -45,12 +45,12 @@ $(document).ready(function() {
     $("#newPizza").append("<div class='col-md-3'>" + "<div class='newPizza'>" +
     "<h4>Size:</h4>" +
     "<select class='form-control' id='size'>" +
-    "<option>8-inch Small Thin Crust- $9.00</option>" +
-    "<option>8-inch Small Original Crust- $9.00</option>" +
-    "<option>12-inch Medium Thin Crust- $12.00</option>" +
-    "<option>12-inch Medium Original Crust- $12.00</option>" +
-    "<option>16-inch Large Thin Crust- $15.00</option>" +
-    "<option>16-inch Large Original Crust- $15.00</option>" +
+    "<option>8-inch Small Thin Crust- $6.00</option>" +
+    "<option>8-inch Small Original Crust- $6.00</option>" +
+    "<option>12-inch Medium Thin Crust- $8.00</option>" +
+    "<option>12-inch Medium Original Crust- $8.00</option>" +
+    "<option>16-inch Large Thin Crust- $10.00</option>" +
+    "<option>16-inch Large Original Crust- $10.00</option>" +
     "</select>" +
     "<h4>Toppings ($1.00 each):</h4>" +
     "<input type='checkbox' name='toppings' value='pepperoni'>Pepperoni<br>" +
