@@ -1,15 +1,15 @@
-#reviewOrder, #detailedOrder, #addressDelivery {
+#reviewOrder, #addressDelivery {
   display: none;
 }
 
-.pizzaList {
-  cursor: pointer;
-  color: #0088cc;
+/*.pizzaList {
+cursor: pointer;
+color: #0088cc;
 }
 
 .pizzaList:hover {
-  text-decoration: underline;
-}
+text-decoration: underline;
+}*/
 
 .background {
   background-color: #FA8072;
@@ -34,7 +34,11 @@ h1 {
   font-family:snell roundhand,cursive;
   font-weight:bold;;
 }
- h3 {
-   font-family: palatino, serif;
-   font-weight: bold;
- }
+h3 {
+  font-family: palatino, serif;
+  font-weight: bold;
+}
+p.addressStatement {
+  font-weight:bold;
+  font-style:italic;
+}

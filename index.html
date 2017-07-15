@@ -9,33 +9,31 @@
 </head>
 <body>
   <div class="background">
-  <div class="container">
-    <div class="jumbotron">
-  <h1>Leaning Tower Of Pizza</h1>
-  <h3>Welcome to Leaning Tower Of Pizza! Select the size and toppings you would like to have on your pizza.</h3>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-  <h3>Delivery or Pick-up</h3>
-
-  <div class="radio">
-  <label>
-    <input type="radio" name="service" value="delivery" checked>
-    Delivery
-  </label>
-</div>
-<div class="radio">
-  <label>
-    <input type="radio" name="service" value="pickup">
-    Pick-Up
-  </label>
-</div>
-<img src="img/leaning-pizza.jpg" alt="a picture of a pizza tower.">
-</div>
-<div class="col-md-6">
-<h5>If you selected Delivery, please fill out the contact information below:</h5>
-<div class="form-group">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Leaning Tower Of Pizza</h1>
+        <h3>Welcome to Leaning Tower Of Pizza! Select the size and toppings you would like to have on your pizza.</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Delivery or Pick-up</h3>
+          <div class="radio">
+            <label>
+              <input type="radio" name="service" value="delivery" checked>
+              Delivery
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="service" value="pickup">
+              Pick-Up
+            </label>
+          </div>
+          <img src="img/leaning-pizza.jpg" alt="a picture of a pizza tower.">
+        </div>
+        <div class="col-md-6">
+          <h5>If you selected Delivery, please fill out the contact information below:</h5>
+          <div class="form-group">
             <label for="name">Name:</label>
             <input id="name" class="form-control" type="text">
           </div>
@@ -62,73 +60,64 @@
         </div>
       </div>
       <div class="row">
-
-    <div id="newPizza">
-<div class="col-md-3">
-      <div class="newPizza">
-
-  <h4>Size:</h4>
-  <select class="form-control" id="size">
-    <option>8-inch Small Thin Crust- $9.00</option>
-    <option>8-inch Small Original Crust- $9.00</option>
-    <option>12-inch Medium Thin Crust- $12.00</option>
-    <option>12-inch Medium Original Crust- $12.00</option>
-    <option>16-inch Large Thin Crust- $15.00</option>
-    <option>16-inch Large Original Crust- $15.00</option>
-  </select>
-  <h4>Toppings ($1.00 each):</h4>
-  <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
-  <input type="checkbox" name="toppings" value="mozzarella">Mozzarella<br>
-  <input type="checkbox" name="toppings" value="sausage">Italian Sausage<br>
-  <input type="checkbox" name="toppings" value="bacon">Bacon<br>
-  <input type="checkbox" name="toppings" value="chicken">Grilled Chicken<br>
-  <input type="checkbox" name="toppings" value="onion">Onion<br>
-  <input type="checkbox" name="toppings" value="pepper">Green Pepper<br>
-  <input type="checkbox" name="toppings" value="garlic">Garlic<br>
-  <input type="checkbox" name="toppings" value="tomato">Tomato<br>
-  <input type="checkbox" name="toppings" value="mushroom">Mushroom<br>
-  <input type="checkbox" name="toppings" value="olive">Olives<br>
-</div>
-</div>
-</div>
-</div>
-
-  <button type="click" id="orderSubmit">Submit Order</button>
-
-  <button type="click" id="anotherPizza">Order another Pizza</button>
-<div class="row">
-  <div class="col-md-6">
-  <div id="reviewOrder">
-    <h1>Thank you for your purchase!</h1>
-    <h3>Review your Order</h3>
-    <h4>Total Cost: <span class="totalCost"></span></h4>
-              <ul id="pizza">
-<p><span class="titleToppings"></span></p>
-              </ul>
+        <div id="newPizza">
+          <div class="col-md-3">
+            <div class="newPizza">
+              <h4>Size:</h4>
+              <select class="form-control" id="size">
+                <option>8-inch Small Thin Crust- $9.00</option>
+                <option>8-inch Small Original Crust- $9.00</option>
+                <option>12-inch Medium Thin Crust- $12.00</option>
+                <option>12-inch Medium Original Crust- $12.00</option>
+                <option>16-inch Large Thin Crust- $15.00</option>
+                <option>16-inch Large Original Crust- $15.00</option>
+              </select>
+              <h4>Toppings ($1.00 each):</h4>
+              <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="mozzarella">Mozzarella<br>
+              <input type="checkbox" name="toppings" value="sausage">Italian Sausage<br>
+              <input type="checkbox" name="toppings" value="bacon">Bacon<br>
+              <input type="checkbox" name="toppings" value="chicken">Grilled Chicken<br>
+              <input type="checkbox" name="toppings" value="onion">Onion<br>
+              <input type="checkbox" name="toppings" value="pepper">Green Pepper<br>
+              <input type="checkbox" name="toppings" value="garlic">Garlic<br>
+              <input type="checkbox" name="toppings" value="tomato">Tomato<br>
+              <input type="checkbox" name="toppings" value="mushroom">Mushroom<br>
+              <input type="checkbox" name="toppings" value="olive">Olives<br>
             </div>
-            <div id="detailedOrder">
+          </div>
+        </div>
+      </div>
+      <button type="click" id="orderSubmit">Submit Order</button>
+      <button type="click" id="anotherPizza">Order another Pizza</button>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="reviewOrder">
+            <h1>Thank you for your purchase!</h1>
+            <h3>Review your Order</h3>
+            <h4>Total Cost: <span class="totalCost"></span></h4>
+            <ul id="pizza">
+              <!-- <p><span class="titleToppings"></span></p> -->
+              <!-- <ul id="toppingsList">
 
-                      <ul id="toppingsReview">
-                         <span class="toppings"></span></p>
-                       </ul>
-
-            </div>
-
-  <div id="addressDelivery">
-<p>The following order will be delivered to:</p>
-<p><span class="show-name"></span></p>
-<p><span class="show-street"></span></p>
-<p><span class="show-address"></span></p>
-<p><span class="show-phone"></span></p>
+            </ul> -->
+          </ul>
+        </div>
+        <div id="addressDelivery">
+          <p class="addressStatement">The following order will be delivered to:</p>
+          <p><span class="show-name"></span></p>
+          <p><span class="show-street"></span></p>
+          <p><span class="show-address"></span></p>
+          <p><span class="show-phone"></span></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-hide">
+          <img src="img/flag.jpg" alt="picture of the Italian flag.">
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="col-md-6">
-<div class="img-hide">
-  <img src="img/flag.jpg" alt="picture of the Italian flag.">
-</div>
-</div>
-</div>
-</div>
 </div>
 </body>
 </html>
