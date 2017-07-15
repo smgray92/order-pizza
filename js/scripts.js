@@ -84,6 +84,7 @@ $(document).ready(function() {
   $("#orderSubmit").click(function() {
 var order = new Order();
     $("#reviewOrder").show();
+    $(".img-hide").show();
 
     // $("input:checkbox[name=toppings]").prop("checked", false);
     var address = $("input:radio[name=service]:checked").val();

@@ -18,3 +18,23 @@ img {
   border: solid  5px #3CB371;
   margin: 30px;
 }
+.img-hide {
+  display:none;
+  margin-right:60px;
+}
+.jumbotron {
+  color: #8B4513;
+  border: solid  5px #3CB371;
+}
+h4 {
+  font-style: italic;
+  font-weight: bold;
+}
+h1 {
+  font-family:snell roundhand,cursive;
+  font-weight:bold;;
+}
+ h3 {
+   font-family: palatino, serif;
+   font-weight: bold;
+ }
