@@ -1,8 +1,12 @@
+var array = [];
+
 function Order () {
   this.size = "";
   this.toppings = [];
   this.cost = 0;
 }
+
+
 
 Order.prototype.calculateCost = function() {
   // this.cost += this.toppings.length;
@@ -52,7 +56,7 @@ Address.prototype.delivery = function() {
 $(document).ready(function() {
   $("#anotherPizza").click(function() {
     // $("input:checkbox[name=toppings]").prop("checked", false);
-    $("#newPizza").append("<div class='newPizza'>" +
+    $("#newPizza").append("<div class='col-md-3'>" + "<div class='newPizza'>" +
 "<h4>Size:</h4>" +
 "<select class='form-control' id='size'>" +
   "<option>8-inch Small Thin Crust- $9.00</option>" +
@@ -74,7 +78,7 @@ $(document).ready(function() {
 "<input type='checkbox' name='toppings' value='tomato'>Tomato<br>" +
 "<input type='checkbox' name='toppings' value='mushroom'>Mushroom<br>" +
 "<input type='checkbox' name='toppings' value='olive'>Olives<br>" +
-"</div>");
+"</div>" + "</div>");
   });
 
   $("#orderSubmit").click(function() {
@@ -115,32 +119,40 @@ $(".newPizza").each(function() {
     var inputtedSize = $(this).find("#size").val();
         order.size = inputtedSize;
         order.calculateCost();
-
+        array.push(inputtedSize);
 
 console.log(inputtedSize);
 console.log(order.cost);
   });
-
-    $("ul#pizza").append("<li><span class='pizzaList'>" + order.size + "</span></li>");
+console.log(array);
+array.forEach(function(item) {
+    $("ul#pizza").append("<li><span class='pizzaList'>" + item + "</span></li>");
+  });
     // $(".pizzaList").each(function() {
     // $(this).click(function() {
       // $(".toppings").empty();
       $(".pizzaList").one( 'click', function() {
-        // $(".pizzaList").forEach(function() {
-      $("#detailedOrder").show();
+        $(".titleToppings").append("<p>Toppings:</p>");
+        // $(".pizzaList").each(function() {
+      // $("#detailedOrder").show();
       order.toppings.forEach(function(item) {
-        $("#toppingsReview").append("<li>" + item + " - $1.00</li>");
+        $("ul.titleToppings").append("<li>" + item + " - $1.00</li>");
+
         // order.calculateCost();
       });
       });
 
   // });
-    $("input:checkbox[name=toppings]:checked").each(function(){
-      var inputtedToppings = $(this).val();
+     $("input:checkbox[name=toppings]:checked").each(function(){
+    var inputtedToppings =  $(this).val();
+    // var inputtedToppings = $("input:checkbox[name=toppings]:checked").map(function(){
+    // return this.value;
+  // }).get().join(",");
       order.toppings.push(inputtedToppings);
 
       console.log(inputtedToppings);
     });
+
 
     order.cost += order.toppings.length;
     $(".totalCost").empty();

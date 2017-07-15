@@ -10,3 +10,11 @@
 .pizzaList:hover {
   text-decoration: underline;
 }
+
+.background {
+  background-color: #FA8072;
+}
+img {
+  border: solid  5px #3CB371;
+  margin: 30px;
+}
